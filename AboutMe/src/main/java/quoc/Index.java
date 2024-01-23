@@ -18,6 +18,7 @@ public class Index extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		PrintWriter out = response.getWriter();
 		
+		
 		out.println("<html><body>");
 		out.println("<h2>Nhập thông tin cá nhân của người yêu bạn</h2>");
 		out.println("<form method = 'post'>");
