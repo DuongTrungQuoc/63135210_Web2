@@ -11,11 +11,7 @@ import java.io.PrintWriter;
 public class Index extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public Index() {
-        super();
-    }
-
-	//Xử lý yêu cầu GET để trả về trang web chứa form nhập Chiều cao, Cân nặng và nút Submit.
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
         response.setContentType("text/html");
@@ -32,7 +28,7 @@ public class Index extends HttpServlet {
         out.println("</body></html>");
 	}
 
-	// Xử lý yêu cầu POST để lấy dữ liệu từ form, thực hiện tính toán BMI và gửi trả kết quả.
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Lấy giá trị cân nặng và chiều cao
         String heightStr = request.getParameter("height");
