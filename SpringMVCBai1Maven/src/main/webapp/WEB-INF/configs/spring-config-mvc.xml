@@ -3,29 +3,20 @@
 xmlns:context="http://www.springframework.org/schema/context"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xmlns:mvc="http://www.springframework.org/schema/mvc"
-
 xsi:schemaLocation="
 http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
 http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
 http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context-3.2.xsd">
-<1 Spring MVC Anotation
-<context:annotation-config/>
-<mvc:annotation-driven/>
-<
-1-- Câu hình views
-<bean
-class="ary, springframework.web.servlet.view. Internal ResourceViewResolver"
-<property name="prefix">
-<value>/WEB-INF/views/</value>
-</property>
-<property name="suffix">
-<value>.jsp</value>
-</property>
-</bean>
-có cấu hình các package chứa các contronllec
-29 <context:component-scan base-package="jp.tvs.controller" />
-34
-31
+	<bean
+	class="ory.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix">
+			<value>/WEB-INF/views/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+ 	<context:component-scan base-package="jp.tvs.controller" />
 </beans>
