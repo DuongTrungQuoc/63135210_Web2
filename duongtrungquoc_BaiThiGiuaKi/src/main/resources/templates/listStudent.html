@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Sách Sinh Viên</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="mt-4">Danh Sách Sinh Viên</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Mã Sinh Viên</th>
+                    <th scope="col">Họ và Tên</th>
+                    <th scope="col">Lớp</th>
+                    <th scope="col">Khoa</th>
+                    <th scope="col">Trường</th>
+                </tr>
+            </thead>
+            <tbody id="studentTableBody">
+                <!-- Dòng này sẽ được thêm thông qua mã JavaScript -->
+            </tbody>
+        </table>
+        <a href="/" class="btn btn-primary">Trở về Trang Chủ</a>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // JavaScript code to fetch and display student data
+        fetch('/getAllStudents')
+            .then(response => response.json())
+            .then(data => {
+                const studentTableBody = document.getElementById('studentTableBody');
+                data.forEach(student => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${student.code}</td>
+                        <td>${student.name}</td>
+                        <td>${student.className}</td>
+                        <td>${student.department}</td>
+                        <td>${student.university}</td>
+                    `;
+                    studentTableBody.appendChild(row);
+                });
+            })
+            .catch(error => console.error('Error fetching student data:', error));
+    </script>
+</body>
+</html>
