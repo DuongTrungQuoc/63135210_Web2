@@ -3383,3 +3383,17 @@ Binding(CTRL+SHIFT+C,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.eclipse.core.resources 2 2 2024-04-16 15:54:15.453
+!MESSAGE Save operation warnings.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2024-04-16 15:54:15.453
+!MESSAGE The project description file (.project) for 'QuanLiBanDoCho' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-04-16 15:54:16.763
+!MESSAGE Classpath changed for project: QuanLiBanDoCho
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-04-16 15:54:16.764
+!MESSAGE Boot project REMOVED: QuanLiBanDoCho
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-04-16 15:54:17.519
+!MESSAGE Classpath changed for project: QuanLiBanDoCho
