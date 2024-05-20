@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thêm Chất Liệu</title>
+</head>
+<body>
+    <h1>Thêm Chất Liệu</h1>
+    <form th:action="@{/chatlieu/save}" th:object="${chatLieu}" method="post">
+        <label for="tenChatLieu">Tên Chất Liệu:</label>
+        <input type="text" id="tenChatLieu" th:field="*{tenChatLieu}"/><br/>
+        <button type="submit">Lưu</button>
+    </form>
+    <a th:href="@{/chatlieu}">Trở về</a>
+</body>
+</html>

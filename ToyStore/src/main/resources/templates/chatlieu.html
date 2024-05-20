@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Danh Sách Chất Liệu</title>
+</head>
+<body>
+    <h1>Danh Sách Chất Liệu</h1>
+    <a th:href="@{/chatlieu/add}">Thêm Chất Liệu</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Mã Chất Liệu</th>
+                <th>Tên Chất Liệu</th>
+                <th>Hành Động</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="chatLieu : ${listChatLieu}">
+                <td th:text="${chatLieu.maChatLieu}"></td>
+                <td th:text="${chatLieu.tenChatLieu}"></td>
+                <td>
+                    <a th:href="@{/chatlieu/edit/{id}(id=${chatLieu.maChatLieu})}">Sửa</a> |
+                    <a th:href="@{/chatlieu/delete/{id}(id=${chatLieu.maChatLieu})}">Xóa</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

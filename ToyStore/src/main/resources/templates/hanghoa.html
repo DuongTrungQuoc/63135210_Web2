@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Danh Sách Hàng Hóa</title>
+</head>
+<body>
+    <h1>Danh Sách Hàng Hóa</h1>
+    <a th:href="@{/hanghoa/add}">Thêm Hàng Hóa</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Mã Hàng</th>
+                <th>Tên Hàng</th>
+                <th>Chất Liệu</th>
+                <th>Số Lượng</th>
+                <th>Đơn Giá Nhập</th>
+                <th>Đơn Giá Bán</th>
+                <th>Hành Động</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="hangHoa : ${listHangHoa}">
+                <td th:text="${hangHoa.maHang}"></td>
+                <td th:text="${hangHoa.tenHang}"></td>
+                <td th:text="${hangHoa.maChatLieu.tenChatLieu}"></td>
+                <td th:text="${hangHoa.soLuong}"></td>
+                <td th:text="${hangHoa.donGiaNhap}"></td>
+                <td th:text="${hangHoa.donGiaBan}"></td>
+                <td>
+                    <a th:href="@{/hanghoa/edit/{id}(id=${hangHoa.maHang})}">Sửa</a> |
+                    <a th:href="@{/hanghoa/delete/{id}(id=${hangHoa.maHang})}">Xóa</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

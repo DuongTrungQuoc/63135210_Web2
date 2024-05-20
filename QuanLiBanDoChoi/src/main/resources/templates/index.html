@@ -1,10 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Spring Boot web</title>
+    <title>Quản lý Hàng Hóa</title>
 </head>
 <body>
-    Hello World!
+    <h1>Danh sách Hàng Hóa</h1>
+    <a href="/showNewHangHoaForm">Thêm Hàng Hóa Mới</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Mã Hàng</th>
+                <th>Tên Hàng</th>
+                <th>Chất Liệu</th>
+                <th>Số Lượng</th>
+                <th>Đơn Giá Nhập</th>
+                <th>Đơn Giá Bán</th>
+                <th>Hành Động</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="hangHoa : ${listHangHoa}">
+                <td th:text="${hangHoa.maHang}">Mã Hàng</td>
+                <td th:text="${hangHoa.tenHang}">Tên Hàng</td>
+                <td th:text="${hangHoa.maChatLieu.tenChatLieu}">Chất Liệu</td>
+                <td th:text="${hangHoa.soLuong}">Số Lượng</td>
+                <td th:text="${hangHoa.donGiaNhap}">Đơn Giá Nhập</td>
+                <td th:text="${hangHoa.donGiaBan}">Đơn Giá Bán</td>
+                <td>
+                    <a th:href="@{/showFormForUpdate/{id}(id=${hangHoa.maHang})}">Sửa</a>
+                    <a th:href="@{/deleteHangHoa/{id}(id=${hangHoa.maHang})}">Xóa</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
