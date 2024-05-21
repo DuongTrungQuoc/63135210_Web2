@@ -1,4 +1,5 @@
 # Đồ án Web2 ( Dương Trung Quốc_63135210)
+# Code nằm trong ToyStore
 Tên đề tài: Toy Store - cửa hàng đồ chơi
 # 1. Trang chủ
 ![HomePage](./picture/Index.jpg)
