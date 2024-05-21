@@ -2,36 +2,65 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Danh Sách Hàng Hóa</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <style>
+        /* Thêm CSS mới */
+        form {
+            text-align: center; /* Căn giữa theo chiều ngang */
+            margin-top: 20px; /* Khoảng cách từ form đến bảng */
+        }
+
+        table {
+            margin-bottom: 200px; /* Khoảng cách từ bảng đến nút */
+        }
+
+        button {
+            width: 200px; /* Chiều rộng của nút */
+            padding: 10px; /* Khoảng cách giữa nút và viền */
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
     <h1>Danh Sách Hàng Hóa</h1>
-    <a th:href="@{/hanghoa/add}">Thêm Hàng Hóa</a>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Mã Hàng</th>
-                <th>Tên Hàng</th>
-                <th>Chất Liệu</th>
-                <th>Số Lượng</th>
-                <th>Đơn Giá Nhập</th>
-                <th>Đơn Giá Bán</th>
-                <th>Hành Động</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="hangHoa : ${listHangHoa}">
-                <td th:text="${hangHoa.maHang}"></td>
-                <td th:text="${hangHoa.tenHang}"></td>
-                <td th:text="${hangHoa.maChatLieu.tenChatLieu}"></td>
-                <td th:text="${hangHoa.soLuong}"></td>
-                <td th:text="${hangHoa.donGiaNhap}"></td>
-                <td th:text="${hangHoa.donGiaBan}"></td>
-                <td>
-                    <a th:href="@{/hanghoa/edit/{id}(id=${hangHoa.maHang})}">Sửa</a> |
-                    <a th:href="@{/hanghoa/delete/{id}(id=${hangHoa.maHang})}">Xóa</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    
+    <form th:action="@{/hanghoa/add}" method="get">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Mã Hàng</th>
+                    <th>Tên Hàng</th>
+                    <th>Chất Liệu</th>
+                    <th>Số Lượng</th>
+                    <th>Đơn Giá Nhập</th>
+                    <th>Đơn Giá Bán</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="hangHoa : ${listHangHoa}">
+                    <td th:text="${hangHoa.maHang}"></td>
+                    <td th:text="${hangHoa.tenHang}"></td>
+                    <td th:text="${hangHoa.maChatLieu.tenChatLieu}"></td>
+                    <td th:text="${hangHoa.soLuong}"></td>
+                    <td th:text="${hangHoa.donGiaNhap}"></td>
+                    <td th:text="${hangHoa.donGiaBan}"></td>
+                    <td>
+                        <a th:href="@{/hanghoa/edit/{id}(id=${hangHoa.maHang})}">Sửa</a> |
+                        <a th:href="@{/hanghoa/delete/{id}(id=${hangHoa.maHang})}">Xóa</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- Di chuyển nút vào trong form để nó được căn giữa -->
+        <button type="submit">Thêm Hàng Hóa</button>
+    </form>
 </body>
 </html>

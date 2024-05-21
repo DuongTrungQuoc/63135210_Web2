@@ -2,16 +2,72 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Danh Sách Chất Liệu</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <style>
+        /* Phong cách cho bảng danh sách */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        /* Phong cách cho thẻ "Thêm Chất Liệu" */
+        .add-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            color: #fff;
+            background-color: #007bff;
+            padding: 10px 15px; /* Giảm width của nút "Thêm Chất Liệu" */
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .add-link:hover {
+            background-color: #0056b3;
+        }
+
+        /* Phong cách cho thẻ "Trang chủ" */
+        .home-link {
+            float: right;
+            margin-top: 20px;
+            margin-right: 20px; /* Khoảng cách từ lề phải */
+            color: #333;
+            text-decoration: none;
+        }
+
+        .home-link:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <h1>Danh Sách Chất Liệu</h1>
-    <a th:href="@{/chatlieu/add}">Thêm Chất Liệu</a>
+    
     <table border="1">
         <thead>
             <tr>
                 <th>Mã Chất Liệu</th>
                 <th>Tên Chất Liệu</th>
-                <th>Hành Động</th>
+                <th>Thao Tác</th>
             </tr>
         </thead>
         <tbody>
@@ -25,5 +81,7 @@
             </tr>
         </tbody>
     </table>
+    <a th:href="@{/chatlieu/add}" class="add-link">Thêm Chất Liệu</a>
+    <a th:href="@{/}" class="home-link">Trang chủ</a>
 </body>
 </html>

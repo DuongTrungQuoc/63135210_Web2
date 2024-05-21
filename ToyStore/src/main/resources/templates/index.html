@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Trang Chủ - Toy Store</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="/hanghoa">Hàng Hóa</a></li>
+            <li><a href="/chatlieu">Vật Liệu</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h1>Chào mừng đến với Toy Store</h1>
+        
+        <!-- Đoạn giới thiệu về Toy Store -->
+        <div class="introduction">
+            <p>
+                Toy Store là nơi mua sắm trực tuyến hàng đầu dành cho mọi người, đặc biệt là các bé yêu thích đồ chơi. 
+                Chúng tôi cung cấp một loạt các sản phẩm đa dạng và phong phú, từ búp bê, xe ô tô, đến đồ chơi vận động và học tập.
+                Hãy thăm cửa hàng của chúng tôi để khám phá thêm!
+            </p>
+        </div>
+        
+        <!-- Các hình ảnh cửa hàng -->
+        <div class="store-images">
+            <img th:each="image : ${storeImages}" th:src="@{'/picture/' + ${image}}" alt="Store Image">
+        </div>
+        
+        <!-- Lưới sản phẩm -->
+        <div class="product-grid">
+            <div class="product-card" th:each="hangHoa : ${listHangHoa}">
+                <img th:src="@{'/picture/' + ${hangHoa.anh}}" alt="Product Image">
+                <h2 th:text="${hangHoa.tenHang}">Tên Hàng</h2>
+                <p>Giá bán: <span th:text="${hangHoa.donGiaBan}"></span> VND</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

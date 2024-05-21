@@ -1,0 +1,139 @@
+/* Phong cách tổng thể cho trang */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Phong cách cho thanh điều hướng */
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end; /* Căn lề phải */
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.navbar li a:hover {
+    background-color: #575757;
+}
+
+/* Phong cách cho container */
+.container {
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Phong cách cho lưới sản phẩm */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Phong cách cho thẻ sản phẩm */
+.product-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 200px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.product-card h2 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.product-card p {
+    color: #333;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+/* Phong cách cho form */
+form {
+    width: 50%;
+    margin: auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+div {
+    margin-bottom: 10px;
+}
+
+label {
+    display: inline-block;
+    width: 150px;
+}
+
+input, select, textarea {
+    width: calc(100% - 160px);
+    padding: 5px;
+}
+
+button {
+    display: block;
+    width: 50%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+/* Phong cách cho nút "Trở về" */
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px; /* Tạo khoảng cách giữa nút "Lưu" và liên kết "Trở về" */
+    color: #333;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}

@@ -2,14 +2,76 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Thêm Chất Liệu</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <style>
+        /* Phong cách cho form */
+        form {
+            width: 50%;
+            margin: auto;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        div {
+            margin-bottom: 10px;
+            display: flex; /* Sử dụng flexbox để các phần tử con nằm cùng hàng */
+            align-items: center; /* Căn các phần tử con theo chiều dọc */
+        }
+
+        label {
+            display: inline-block;
+            width: 150px;
+            margin-right: 10px; /* Khoảng cách giữa nhãn và khung nhập liệu */
+        }
+
+        input[type="text"] {
+            width: calc(100% - 160px); /* Độ rộng của khung nhập liệu = 100% - (độ rộng của nhãn + khoảng cách giữa nhãn và khung nhập liệu) */
+            padding: 5px;
+        }
+
+        button {
+            display: block;
+            width: 50%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin: 0 auto 20px; /* Lùi nút vào bên dưới và thêm khoảng cách 20px với các phần tử phía trên */
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Phong cách cho nút "Trở về" */
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ccc;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #ddd;
+        }
+    </style>
 </head>
 <body>
     <h1>Thêm Chất Liệu</h1>
     <form th:action="@{/chatlieu/save}" th:object="${chatLieu}" method="post">
-        <label for="tenChatLieu">Tên Chất Liệu:</label>
-        <input type="text" id="tenChatLieu" th:field="*{tenChatLieu}"/><br/>
-        <button type="submit">Lưu</button>
+        <div>
+            <label for="tenChatLieu">Tên Chất Liệu:</label>
+            <input type="text" id="tenChatLieu" th:field="*{tenChatLieu}" />
+        </div>
+        <div>
+            <button type="submit">Lưu</button>
+        </div>
     </form>
-    <a th:href="@{/chatlieu}">Trở về</a>
+    <a th:href="@{/chatlieu}" style="margin-left: 600px;margin-top: 30px">Trở về</a> <!-- Thêm margin-left cho nút "Trở về" -->
 </body>
 </html>
